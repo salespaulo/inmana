@@ -30,6 +30,6 @@ defmodule InmanaWeb.Router do
   end
 
   if Mix.env() == :dev do
-    forward "/sent_emails", Bamboo.SentEmailViewerPlug
+    forward "/emails", Bamboo.SentEmailViewerPlug
   end
 end

@@ -2,6 +2,7 @@ defmodule Inmana.Restaurant do
   use Ecto.Schema
   alias Inmana.Supply
   import Ecto.Changeset
+  import EctoCommons.EmailValidator
 
   @primary_key {:id, :binary_id, autogenerate: true}
 
@@ -23,7 +24,7 @@ defmodule Inmana.Restaurant do
     |> cast(params, @required_params)
     |> validate_required(@required_params)
     |> validate_length(:name, min: 3)
-    |> validate_format(:email, ~r/@/)
+    |> validate_email(:email)
     |> unique_constraint([:email])
   end
 end

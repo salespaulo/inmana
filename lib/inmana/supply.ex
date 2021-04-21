@@ -1,7 +1,8 @@
 defmodule Inmana.Supply do
   use Ecto.Schema
-  import Ecto.Changeset
   alias Inmana.Restaurant
+  import Ecto.Changeset
+  import EctoCommons.DateValidator
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
@@ -25,6 +26,7 @@ defmodule Inmana.Supply do
     |> cast(params, @required_params)
     |> validate_length(:description, min: 3)
     |> validate_length(:responsible, min: 3)
+    |> validate_date(:expiration_date)
     |> unique_constraint([:description, :restaurant_id])
   end
 end
