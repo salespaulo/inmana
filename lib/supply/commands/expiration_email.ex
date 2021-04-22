@@ -1,4 +1,4 @@
-defmodule Inmana.Supplies.ExpirationEmail do
+defmodule Inmana.Supply.ExpirationEmail do
   import Bamboo.Email
   alias Inmana.Supply
 
@@ -20,7 +20,7 @@ defmodule Inmana.Supplies.ExpirationEmail do
         text_body: email_text(supplies)
       )
 
-  defp email_text(%Supply{
+  defp email_text(%Supply.Schema{
          description: description,
          expiration_date: expiration_date,
          responsible: responsible

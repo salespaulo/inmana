@@ -1,4 +1,4 @@
-defmodule Inmana.Supplies.Get do
+defmodule Inmana.Supply.Get do
   alias Inmana.{Repo, Supply}
 
   def call(uuid) do

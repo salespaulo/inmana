@@ -1,4 +1,4 @@
-defmodule Inmana.Supply do
+defmodule Inmana.Supply.Schema do
   use Ecto.Schema
   alias Inmana.Restaurant
   import Ecto.Changeset
@@ -16,7 +16,7 @@ defmodule Inmana.Supply do
     field :responsible, :string
     field :expiration_date, :date
 
-    belongs_to :restaurant, Restaurant
+    belongs_to :restaurant, Restaurant.Schema
 
     timestamps()
   end

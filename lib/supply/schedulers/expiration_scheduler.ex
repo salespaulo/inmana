@@ -1,4 +1,4 @@
-defmodule Inmana.Supplies.ExpirationScheduler do
+defmodule Inmana.Supply.ExpirationScheduler do
   use GenServer
   alias Inmana.Supplies.ExpirationNotification
 

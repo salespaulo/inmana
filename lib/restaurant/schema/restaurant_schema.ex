@@ -1,4 +1,4 @@
-defmodule Inmana.Restaurant do
+defmodule Inmana.Restaurant.Schema do
   use Ecto.Schema
   alias Inmana.Supply
   import Ecto.Changeset
@@ -14,7 +14,7 @@ defmodule Inmana.Restaurant do
     field :name, :string
     field :email, :string
 
-    has_many :supplies, Supply
+    has_many :supplies, Supply.Schema
 
     timestamps()
   end

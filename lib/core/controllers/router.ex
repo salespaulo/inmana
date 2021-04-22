@@ -8,7 +8,6 @@ defmodule InmanaWeb.Router do
   scope "/api", InmanaWeb do
     pipe_through :api
 
-    get "/welcome", WelcomerController, :index
     post "/restaurants", RestaurantsController, :create
     resources "/supplies", SuppliesController, only: [:create, :show]
   end

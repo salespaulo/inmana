@@ -1,4 +1,4 @@
-defmodule Inmana.Supplies.ExpirationNotification do
+defmodule Inmana.Supply.ExpirationNotification do
   alias Inmana.Mailer
   alias Inmana.Supplies.{ExpirationEmail, GetByExpiration}
 

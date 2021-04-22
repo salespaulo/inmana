@@ -6,7 +6,7 @@ defmodule InmanaWeb.SuppliesController do
   action_fallback FallbackController
 
   def create(conn, params) do
-    with {:ok, %Supply{} = supply} <- Inmana.create_supplies(params) do
+    with {:ok, %Supply.Schema{} = supply} <- Inmana.create_supplies(params) do
       conn
       |> put_status(:created)
       |> render("create.json", supply: supply)
@@ -14,7 +14,7 @@ defmodule InmanaWeb.SuppliesController do
   end
 
   def show(conn, %{"id" => uuid}) do
-    with {:ok, %Supply{} = supply} <- Inmana.get_supply(uuid) do
+    with {:ok, %Supply.Schema{} = supply} <- Inmana.get_supply(uuid) do
       conn
       |> put_status(:ok)
       |> render("show.json", supply: supply)
