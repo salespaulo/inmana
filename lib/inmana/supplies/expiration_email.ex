@@ -4,12 +4,12 @@ defmodule Inmana.Supplies.ExpirationEmail do
 
   @email_subject "Supplies to expire em forma de texto(string):\n"
 
-  def create(supplies_groupby_restaurant_email),
-    do:
-      supplies_groupby_restaurant_email
-      |> Enum.map(fn supplies_by_email ->
-        new_supplies_by_email(supplies_by_email)
-      end)
+  def create(supplies_groupby_restaurant_email) do
+    supplies_groupby_restaurant_email
+    |> Task.async_stream(fn supplies_by_email ->
+      new_supplies_by_email(supplies_by_email)
+    end)
+  end
 
   defp new_supplies_by_email({email, supplies}),
     do:
