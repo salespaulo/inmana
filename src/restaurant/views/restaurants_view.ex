@@ -11,4 +11,8 @@ defmodule InmanaWeb.Restaurant.RestView do
   def render("show.json", %{restaurant: restaurant}) do
     %{restaurant: restaurant}
   end
+
+  def render("all.json", %{data: data, pageable: pageable}) do
+    %{restaurants: %{data: data, pageable: pageable}}
+  end
 end

@@ -13,10 +13,13 @@ defmodule Inmana do
   # Restaurant
   defdelegate restaurant_create(params), to: Restaurant, as: :create
   defdelegate restaurant_get(uuid), to: Restaurant, as: :get
+  defdelegate restaurant_get_all(), to: Restaurant, as: :get_all
+  defdelegate restaurant_get_all(params), to: Restaurant, as: :get_all
   defdelegate restaurant_get_with_supplies(uuid), to: Restaurant, as: :get_with_supplies
 
   # Supply
   defdelegate supply_get(uuid), to: Supply, as: :get
+  defdelegate supply_get_all(params), to: Supply, as: :get_all
   defdelegate supply_get_by_expiration(), to: Supply, as: :get_by_expiration
   defdelegate supply_get_by_expiration(date), to: Supply, as: :get_by_expiration
 

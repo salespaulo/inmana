@@ -20,4 +20,12 @@ defmodule InmanaWeb.Restaurant.RestController do
       |> render("show.json", restaurant: restaurant)
     end
   end
+
+  def all(conn, params) do
+    with {:ok, data} <- Inmana.restaurant_get_all(params) do
+      conn
+      |> put_status(:ok)
+      |> render("all.json", data)
+    end
+  end
 end

@@ -15,7 +15,6 @@ defmodule Inmana.Supply.ExpirationScheduler do
   # Async
   @impl true
   def handle_info(:generate, state) do
-    IO.puts("Recebe de todos processos msgs")
     ExpirationNotification.send()
     schedule_notify()
     {:noreply, state}

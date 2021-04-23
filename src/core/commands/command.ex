@@ -4,6 +4,9 @@ defmodule Inmana.Core.Command do
       import Ecto.Query
       alias Inmana.Repo
 
+      @page_init 1
+      @page_size 10
+
       @msg_error_not_found "Not found!"
       @msg_error_uuid "ID is invalid!"
 
@@ -23,11 +26,33 @@ defmodule Inmana.Core.Command do
         {:error, %{result: msg, status: status}}
       end
 
+      def count(schema) do
+        schema
+        |> Repo.aggregate(:count)
+      end
+
       def get_by_id(schema, uuid) do
         case Ecto.UUID.cast(uuid) do
           {:ok, uuid} -> Repo.get(schema, uuid) |> handle_response()
           :error -> handle_error("UUID is invalid!", :bad_request)
         end
+      end
+
+      def paginate(query, page, page_size, total_size) do
+        page = if page < 0, do: @page_init, else: page
+        page_size = if page_size <= 0, do: @page_size, else: page_size
+
+        query
+        |> order_by(asc: :inserted_at)
+        |> EctoPaginator.paginate(page, page_size)
+        |> Repo.all()
+        |> paginate_helper(page, page_size, total_size)
+        |> handle_response()
+      end
+
+      def paginate_helper(data, page, page_size, total_size) do
+        pageable = %{page: page, page_size: page_size, total_size: total_size}
+        %{data: data, pageable: pageable}
       end
     end
   end

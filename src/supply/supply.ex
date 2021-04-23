@@ -1,13 +1,13 @@
 defmodule Inmana.Supply do
-  alias Inmana.Supply.Create, as: SupplyCreate
-  alias Inmana.Supply.Get, as: SupplyGet
-  alias Inmana.Supply.GetByExpiration, as: SupplyGetByExpiration
-  alias Inmana.Supply.ExpirationNotification, as: SupplyExpirationNotification
+  alias Inmana.Supply.{Create, Get, GetAll, GetByExpiration, ExpirationNotification}
 
-  defdelegate get(uuid), to: SupplyGet, as: :call
-  defdelegate get_by_expiration(), to: SupplyGetByExpiration, as: :call
-  defdelegate get_by_expiration(date), to: SupplyGetByExpiration, as: :call
+  defdelegate get(uuid), to: Get, as: :call
+  defdelegate get_by_expiration(), to: GetByExpiration, as: :call
+  defdelegate get_by_expiration(date), to: GetByExpiration, as: :call
 
-  defdelegate create(params), to: SupplyCreate, as: :call
-  defdelegate expiration_notify(), to: SupplyExpirationNotification, as: :send
+  defdelegate get_all(), to: GetAll, as: :call
+  defdelegate get_all(params), to: GetAll, as: :call
+
+  defdelegate create(params), to: Create, as: :call
+  defdelegate expiration_notify(), to: ExpirationNotification, as: :send
 end

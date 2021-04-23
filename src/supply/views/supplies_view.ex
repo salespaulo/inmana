@@ -11,4 +11,8 @@ defmodule InmanaWeb.Supply.RestView do
   def render("show.json", %{supply: supply}) do
     %{supply: supply}
   end
+
+  def render("all.json", %{data: data, pageable: pageable}) do
+    %{supplies: %{data: data, pageable: pageable}}
+  end
 end

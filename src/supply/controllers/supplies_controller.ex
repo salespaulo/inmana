@@ -20,4 +20,12 @@ defmodule InmanaWeb.Supply.RestController do
       |> render("show.json", supply: supply)
     end
   end
+
+  def all(conn, params) do
+    with {:ok, data} <- Inmana.supply_get_all(params) do
+      conn
+      |> put_status(:ok)
+      |> render("all.json", data)
+    end
+  end
 end
