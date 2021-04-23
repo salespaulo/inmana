@@ -1,6 +1,6 @@
 defmodule Inmana.Supply.ExpirationNotification do
   alias Inmana.Mailer
-  alias Inmana.Supplies.{ExpirationEmail, GetByExpiration}
+  alias Inmana.Supply.{ExpirationEmail, GetByExpiration}
 
   def send do
     Task.async(fn -> send_async() end)

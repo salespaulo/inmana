@@ -7,18 +7,9 @@ defmodule Inmana do
   if it comes from the database, an external API or others.
   """
 
-  alias Inmana.Restaurant.Create, as: RestaurantCreate
-  alias Inmana.Supply.Create, as: SupplyCreate
-  alias Inmana.Supply.Get, as: SupplyGet
-  alias Inmana.Supply.GetByExpiration, as: SupplyGetByExpiration
-  alias Inmana.Supply.ExpirationNotification, as: SupplyExpirationNotification
+  alias Inmana.Restaurant
+  alias Inmana.Supply
 
-  defdelegate create_restaurant(params), to: RestaurantCreate, as: :call
-  defdelegate create_supplies(params), to: SupplyCreate, as: :call
-
-  defdelegate get_supply(uuid), to: SupplyGet, as: :call
-  defdelegate get_supplies_by_expiration(), to: SupplyGetByExpiration, as: :call
-  defdelegate get_supplies_by_expiration(date), to: SupplyGetByExpiration, as: :call
-
-  defdelegate expiration_notify(), to: SupplyExpirationNotification, as: :send
+  defdelegate restaurant_create(params), to: Restaurant, as: :create
+  defdelegate
 end

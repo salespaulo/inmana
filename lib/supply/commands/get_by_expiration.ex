@@ -22,6 +22,6 @@ defmodule Inmana.Supply.GetByExpiration do
 
     query
     |> Repo.all()
-    |> Enum.group_by(fn %Supply{restaurant: %Restaurant.Schema{email: email}} -> email end)
+    |> Enum.group_by(fn %Supply.Schema{restaurant: %Restaurant.Schema{email: email}} -> email end)
   end
 end
