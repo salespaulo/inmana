@@ -1,20 +1,19 @@
 defmodule Inmana.Restaurant.Schema do
-  use Ecto.Schema
+  use Inmana.Core.Schema
   alias Inmana.Supply
   import Ecto.Changeset
   import EctoCommons.EmailValidator
 
   @primary_key {:id, :binary_id, autogenerate: true}
-
   @required_params [:name, :email]
 
   @derive {Jason.Encoder, only: [:id | @required_params]}
 
-  schema "restaurants" do
+  schema "restaurant" do
     field :name, :string
     field :email, :string
 
-    has_many :supplies, Supply.Schema
+    has_many :supplies, Supply.Schema, foreign_key: :restaurant_id, references: :id
 
     timestamps()
   end

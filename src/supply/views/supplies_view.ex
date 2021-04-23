@@ -1,4 +1,4 @@
-defmodule InmanaWeb.SuppliesView do
+defmodule InmanaWeb.Supply.RestView do
   use InmanaWeb, :view
 
   def render("create.json", %{supply: supply}) do
@@ -8,5 +8,7 @@ defmodule InmanaWeb.SuppliesView do
     }
   end
 
-  def render("show.json", %{supply: supply}), do: %{supply: supply}
+  def render("show.json", %{supply: supply}) do
+    %{supply: supply}
+  end
 end

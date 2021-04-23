@@ -1,5 +1,5 @@
 defmodule Inmana.Supply.Schema do
-  use Ecto.Schema
+  use Inmana.Core.Schema
   alias Inmana.Restaurant
   import Ecto.Changeset
   import EctoCommons.DateValidator
@@ -11,7 +11,7 @@ defmodule Inmana.Supply.Schema do
 
   @derive {Jason.Encoder, only: [:id | @required_params]}
 
-  schema "supplies" do
+  schema "supply" do
     field :description, :string
     field :responsible, :string
     field :expiration_date, :date
