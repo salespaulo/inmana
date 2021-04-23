@@ -1,5 +1,6 @@
 defmodule Inmana.Supply.Create do
-  alias Inmana.{Repo, Supply}
+  alias Inmana.{Core, Supply}
+  use Core.Command
 
   def call(params) do
     params
@@ -8,6 +9,6 @@ defmodule Inmana.Supply.Create do
     |> handle_insert()
   end
 
-  defp handle_insert({:ok, %Supply.Schema{}} = result), do: result
-  defp handle_insert({:error, result}), do: {:error, %{result: result, status: :bad_request}}
+  defp handle_insert({:ok, %Supply.Schema{} = result}), do: handle_response(result)
+  defp handle_insert({:error, result}), do: handle_error(result, :bad_request)
 end
