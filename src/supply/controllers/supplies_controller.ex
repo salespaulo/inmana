@@ -22,10 +22,10 @@ defmodule InmanaWeb.Supply.RestController do
   end
 
   def all(conn, params) do
-    with {:ok, data} <- Inmana.supply_get_all(params) do
+    with {:ok, result} <- Inmana.supply_get_all(params) do
       conn
       |> put_status(:ok)
-      |> render("all.json", data)
+      |> render("all.json", %{result: result})
     end
   end
 end

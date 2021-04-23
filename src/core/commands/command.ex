@@ -44,15 +44,8 @@ defmodule Inmana.Core.Command do
 
         query
         |> order_by(asc: :inserted_at)
-        |> EctoPaginator.paginate(page, page_size)
-        |> Repo.all()
-        |> paginate_helper(page, page_size, total_size)
+        |> Repo.paginate(page: page, page_size: page_size)
         |> handle_response()
-      end
-
-      def paginate_helper(data, page, page_size, total_size) do
-        pageable = %{page: page, page_size: page_size, total_size: total_size}
-        %{data: data, pageable: pageable}
       end
     end
   end
