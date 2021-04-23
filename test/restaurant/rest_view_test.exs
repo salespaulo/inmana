@@ -1,6 +1,6 @@
-defmodule InmanaWeb.Restaurant.RestViewTest do
+defmodule InmanaWeb.RestaurantRestViewTest do
+  alias InmanaWeb.{ConnCase, RestaurantRestView}
   alias Inmana.Restaurant
-  alias InmanaWeb.{ConnCase, Restaurant.RestView}
 
   use ConnCase
 

@@ -1,4 +1,4 @@
-defmodule InmanaWeb.Restaurant.RestControllerTest do
+defmodule InmanaWeb.RestaurantRestControllerTest do
   use InmanaWeb.ConnCase
 
   @path_url "/api/restaurants"

@@ -1,6 +1,6 @@
-defmodule InmanaWeb.Supply.RestViewTest do
+defmodule InmanaWeb.SupplyRestViewTest do
+  alias InmanaWeb.{ConnCase, SupplyRestView}
   alias Inmana.Supply
-  alias InmanaWeb.{ConnCase, Supply.RestView}
 
   use ConnCase
 

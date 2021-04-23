@@ -44,7 +44,6 @@ defmodule Inmana.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:bamboo, "~> 2.1.0"},
-      {:ecto_commons, "~> 0.3.2"},
       {:scrivener_ecto, "~> 2.0"}
     ]
   end

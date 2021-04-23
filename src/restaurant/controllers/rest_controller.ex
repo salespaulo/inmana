@@ -1,4 +1,4 @@
-defmodule InmanaWeb.Restaurant.RestController do
+defmodule InmanaWeb.RestaurantRestController do
   use InmanaWeb, :controller
   alias Inmana.Restaurant
   alias InmanaWeb.FallbackController

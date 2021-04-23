@@ -1,4 +1,4 @@
-defmodule InmanaWeb.Supply.RestControllerTest do
+defmodule InmanaWeb.SupplyRestControllerTest do
   use InmanaWeb.ConnCase
 
   @path_url "/api/supplies"

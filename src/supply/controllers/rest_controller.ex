@@ -1,4 +1,4 @@
-defmodule InmanaWeb.Supply.RestController do
+defmodule InmanaWeb.SupplyRestController do
   use InmanaWeb, :controller
   alias Inmana.Supply
   alias InmanaWeb.FallbackController

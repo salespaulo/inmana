@@ -8,11 +8,11 @@ defmodule InmanaWeb.Router do
   scope "/api", InmanaWeb do
     pipe_through :api
 
-    get "/restaurants/query", Restaurant.RestController, :query
-    resources "/restaurants", Restaurant.RestController, [:create, :show]
+    get "/restaurants/query", RestaurantRestController, :query
+    resources "/restaurants", RestaurantRestController, [:create, :show]
 
-    get "/supplies/query", Supply.RestController, :query
-    resources "/supplies", Supply.RestController, only: [:create, :show]
+    get "/supplies/query", SupplyRestController, :query
+    resources "/supplies", SupplyRestController, only: [:create, :show]
   end
 
   # Enables LiveDashboard only for development
