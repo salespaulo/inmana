@@ -45,8 +45,7 @@ defmodule Inmana.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:bamboo, "~> 2.1.0"},
       {:ecto_commons, "~> 0.3.2"},
-      {:scrivener_ecto, "~> 2.0"},
-      {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
+      {:scrivener_ecto, "~> 2.0"}
     ]
   end
 

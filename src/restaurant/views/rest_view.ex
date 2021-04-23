@@ -12,9 +12,7 @@ defmodule InmanaWeb.Restaurant.RestView do
     %{restaurant: restaurant}
   end
 
-  def render("all.json", %{result: page}) do
-    IO.inspect(page)
-
+  def render("query.json", %{page: page}) do
     %{
       restaurants: %{
         data: page.entries,

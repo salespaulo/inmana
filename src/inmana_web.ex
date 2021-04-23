@@ -31,7 +31,7 @@ defmodule InmanaWeb do
     quote do
       use Phoenix.View,
         # Como colocar o dir "src/" dinamicamento, remover esse harcode?
-        root: "src/inmana_web/templates",
+        root: "src/core/templates",
         namespace: InmanaWeb
 
       # Import convenience functions from controllers

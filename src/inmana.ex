@@ -19,6 +19,7 @@ defmodule Inmana do
 
   # Supply
   defdelegate supply_get(uuid), to: Supply, as: :get
+  defdelegate supply_get_all(), to: Supply, as: :get_all
   defdelegate supply_get_all(params), to: Supply, as: :get_all
   defdelegate supply_get_by_expiration(), to: Supply, as: :get_by_expiration
   defdelegate supply_get_by_expiration(date), to: Supply, as: :get_by_expiration

@@ -3,7 +3,7 @@ defmodule InmanaWeb.Supply.RestView do
 
   def render("create.json", %{supply: supply}) do
     %{
-      message: "Supply created!",
+      message: "Supply Created!",
       supply: supply
     }
   end
@@ -12,7 +12,7 @@ defmodule InmanaWeb.Supply.RestView do
     %{supply: supply}
   end
 
-  def render("all.json", %{result: page}) do
+  def render("query.json", %{page: page}) do
     %{
       supplies: %{
         data: page.entries,

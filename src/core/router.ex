@@ -8,10 +8,10 @@ defmodule InmanaWeb.Router do
   scope "/api", InmanaWeb do
     pipe_through :api
 
-    get "/restaurants/query", Restaurant.RestController, :all
+    get "/restaurants/query", Restaurant.RestController, :query
     resources "/restaurants", Restaurant.RestController, [:create, :show]
 
-    get "/supplies/query", Supply.RestController, :all
+    get "/supplies/query", Supply.RestController, :query
     resources "/supplies", Supply.RestController, only: [:create, :show]
   end
 

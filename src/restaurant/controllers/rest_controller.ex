@@ -21,11 +21,11 @@ defmodule InmanaWeb.Restaurant.RestController do
     end
   end
 
-  def all(conn, params) do
-    with {:ok, result} <- Inmana.restaurant_get_all(params) do
+  def query(conn, params) do
+    with {:ok, page} <- Inmana.restaurant_get_all(params) do
       conn
       |> put_status(:ok)
-      |> render("all.json", %{result: result})
+      |> render("query.json", %{page: page})
     end
   end
 end
