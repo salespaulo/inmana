@@ -2,7 +2,7 @@ defmodule Inmana.Supply.GetByExpiration do
   alias Inmana.{Core, Supply, Restaurant}
   use Core.Command
 
-  def call() do
+  def call do
     call(Date.utc_today())
   end
 

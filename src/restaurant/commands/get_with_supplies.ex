@@ -1,5 +1,5 @@
 defmodule Inmana.Restaurant.GetWithSupplies do
-  alias Inmana.{Repo, Core, Restaurant}
+  alias Inmana.{Core, Restaurant}
   use Core.Command
 
   def call(uuid) do

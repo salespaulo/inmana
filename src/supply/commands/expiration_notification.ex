@@ -4,7 +4,7 @@ defmodule Inmana.Supply.ExpirationNotification do
 
   def send do
     Task.async(fn -> send_async() end)
-    |> Task.await(10000)
+    |> Task.await()
   end
 
   def send_async do
