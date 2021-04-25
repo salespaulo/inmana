@@ -7,7 +7,6 @@ defmodule Inmana.Restaurant.Schema do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
 
-  @primary_key {:id, :binary_id, autogenerate: true}
   @required_params [:name, :email]
 
   @derive {Jason.Encoder, only: [:id | @required_params]}
@@ -26,6 +25,7 @@ defmodule Inmana.Restaurant.Schema do
     |> cast(params, @required_params)
     |> validate_required(@required_params)
     |> validate_length(:name, min: 3)
+    |> validate_format(:email, ~r/@/)
     |> unique_constraint([:email])
   end
 end
