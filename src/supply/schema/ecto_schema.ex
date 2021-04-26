@@ -3,6 +3,7 @@ defmodule Inmana.Supply.Schema do
   import Ecto.Changeset
 
   alias Inmana.Restaurant
+  alias Inmana.Stock
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
@@ -17,6 +18,7 @@ defmodule Inmana.Supply.Schema do
     field :expiration_date, :date
 
     belongs_to :restaurant, Restaurant.Schema
+    has_many :stocks, Stock.Schema, foreign_key: :supply_id, references: :id
 
     timestamps()
   end
